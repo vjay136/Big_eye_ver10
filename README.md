@@ -2,6 +2,10 @@
 
 Email analysis web application and Manifest V3 Chrome extension.
 
+[Open the deployed preview](https://big-eye-silk.vercel.app) · [Supabase project](https://supabase.com/dashboard/project/nlqqbxnifyyvibxboufb)
+
+The first Vercel deployment uses Production and carries preview release status. Hosted triage and the backend readiness response were verified on 18 November 2026.
+
 ## Current release
 
 Version 1.0.1, release 2, preview, 18 November 2026.

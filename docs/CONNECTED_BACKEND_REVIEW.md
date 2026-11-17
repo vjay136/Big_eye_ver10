@@ -28,3 +28,9 @@ GitHub publication remains pending explicit approval of public source publicatio
 ## Local changes
 
 Integration Readiness now uses the live 83-entry registry and can request backend adapter configuration from get-provider-catalog. Every registry entry retains pending live-result verification until an adapter request and expected result are recorded. Version 1.0.1, release 2 preserves version 1.0.0's local artifacts.
+
+## Hosted verification
+
+Version 1.0.1, release 2 is deployed at https://big-eye-silk.vercel.app. Vercel reports READY. The first deployment uses Production because Vercel requires that target for new projects. Hosted message triage and the backend 26-provider configuration response were verified through the browser.
+
+Supabase Auth Site URL and the redirect allowlist now include the deployed origin. A read-back comparison confirmed both declared settings match. Authenticated user sign-in and provider analysis results still require separate tests.

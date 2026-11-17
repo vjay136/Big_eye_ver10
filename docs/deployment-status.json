@@ -1,0 +1,23 @@
+{
+  "version": "1.0.1",
+  "release": 2,
+  "verifiedOn": "2026-11-18",
+  "webUrl": "https://big-eye-silk.vercel.app",
+  "vercelProject": "big-eye",
+  "vercelTeam": "silent-soldier-vjay",
+  "deploymentId": "dpl_Hc1CH1KfQ1VHgWzB8gcWPMkJEFBc",
+  "deploymentState": "READY",
+  "deploymentTarget": "production",
+  "supabaseProjectRef": "nlqqbxnifyyvibxboufb",
+  "registeredApis": 83,
+  "deployedAdapterConfigurations": 26,
+  "providerResultVerification": "pending",
+  "hostedChecks": [
+    "Local message triage",
+    "83-entry API registry",
+    "Registry filtering",
+    "Live backend provider configuration response"
+  ],
+  "authSiteUrl": "https://big-eye-silk.vercel.app",
+  "authRedirectVerified": true
+}

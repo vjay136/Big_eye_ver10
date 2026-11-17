@@ -25,13 +25,13 @@ For future changes, create a feature branch, run tests and builds, open a pull r
 
 The checked-in apps/web/vercel.json configures the Vite output and SPA fallback.
 
-The Vercel connection returned HTTP 403 for vjayces-projects during preparation. Team consent is required before an agent can create and verify a deployment.
+The Vercel CLI is authorized for silent-soldier-vjay. Project big-eye is linked to apps/web and deployed at https://big-eye-silk.vercel.app. The connector belongs to a different account, so project operations use the CLI. See deployment-status.json for the verified deployment.
 
 Vercel creates deployments from connected Git repositories and supports project root, build and environment settings. [Vercel Git deployments](https://vercel.com/docs/git)
 
 ## Restore Supabase
 
-The supplied project reference is nlqqbxnifyyvibxboufb. It was absent from the connected account during preparation.
+The supplied project reference is nlqqbxnifyyvibxboufb. CLI access through its owning account was established on 18 November 2026. The deployed public client is configured and the hosted backend readiness request passes.
 
 1. Make the intended project accessible through your Supabase connection.
 2. Compare live schema and migration history against supabase/tables and supabase/migrations.
