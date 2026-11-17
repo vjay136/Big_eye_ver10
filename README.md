@@ -4,7 +4,7 @@ Email analysis web application and Manifest V3 Chrome extension.
 
 ## Current release
 
-Version 1.0.0, release 1, preview, 17 November 2026.
+Version 1.0.1, release 2, preview, 18 November 2026.
 
 The working baseline is the supplied archive named Big_Eye_7th_Nov_2025_last_working_model_ver2.zip. The full Drive archive is retained locally under sources/Big_Eye_All_Data.rar. It includes several later experimental branches. Their additional tools require reconciliation and backend verification.
 
@@ -56,7 +56,7 @@ Open the URL printed by Vite. Local Triage and Email Intelligence work before ba
 
 Copy apps/web/.env.example to apps/web/.env.local. Set VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY using your intended Supabase project. These values identify the public client. Put commercial provider secrets in Supabase function secrets.
 
-The supplied project ref nlqqbxnifyyvibxboufb was absent from the connected Supabase account during this work. Live authentication, scan persistence, provider connections and migrated schema have pending verification.
+Supabase CLI access to project nlqqbxnifyyvibxboufb was verified on 18 November 2026. The live project contains 61 functions, 46 public tables and the 83-entry API registry. The local public client is configured. Application authentication, scan persistence, policy enforcement and provider results require further verification. See docs/CONNECTED_BACKEND_REVIEW.md.
 
 The inherited SQL includes permissive cache policies and a user-editable profile carrying is_admin. Review the remediation work in docs/ANALYSIS.md before enabling enterprise access.
 
@@ -73,7 +73,7 @@ The inherited SQL includes permissive cache policies and a user-editable profile
 
 Scores are heuristic signals. Attachment fingerprints and filename checks require further investigation for a malware verdict. Supplied authentication headers require validation against the receiving server.
 
-The Integration Readiness tab shows the later archive's host references, source modules, credential references and live-verification scope. See docs/API_VERIFICATION.md for the 80+ API verification work.
+The Integration Readiness tab shows all 83 registered APIs, their authentication requirements and pending result verification. Its backend readiness button loads the deployed provider configuration. See docs/API_VERIFICATION.md for the 80+ API verification work.
 
 ## Validate and package
 
@@ -84,7 +84,7 @@ pnpm extension:build
 python scripts/package-release.py
 ~~~
 
-The packaging script expects staged or committed Git files and an existing web build. It creates source, web and extension ZIPs plus SHA-256 checksums in releases/1.0.0/.
+The packaging script expects staged or committed Git files and an existing web build. It creates source, web and extension ZIPs plus SHA-256 checksums in releases/1.0.1/.
 
 ## Hosting and distribution
 
@@ -93,7 +93,7 @@ Follow docs/DEPLOYMENT.md for GitHub, Vercel, Supabase and Chrome Web Store inst
 ## Version updates
 
 ~~~powershell
-node scripts/set-version.mjs 1.0.1 2
+node scripts/set-version.mjs 1.0.2 3
 ~~~
 
 This updates package manifests, release.json and the web release display. Update CHANGELOG.md, run verification, commit, tag and package the release. Chrome requires increasing manifest versions for subsequent uploads.

@@ -1,7 +1,7 @@
 {
   "name": "big-eye-web",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -39,5 +39,8 @@
     "overrides": {
       "yaml": "^2.8.3"
     }
+  },
+  "engines": {
+    "node": "22.x"
   }
 }

@@ -1,10 +1,12 @@
 # API verification status
 
+On 18 November 2026, the owning Supabase account was authorized through the CLI. The live api_registry supplies the full 83-entry checklist. The Integration Readiness tab now uses that registry and can load the deployed 26-adapter configuration response. See CONNECTED_BACKEND_REVIEW.md for verified access and credential availability.
+
 The requested target is every claimed 80+ API. The later source advertises 82+. Its selected final branch has 56 Edge Function handlers and 78 distinct outbound host references. These counts describe different objects and require reconciliation. The host references include social links and example targets.
 
 The inherited health checker checks eight targets and treats HTTP success as operational. Credential validation, successful provider-specific schemas and correct indicator results need separate tests.
 
-The machine-readable inventory is apps/web/src/config/integrationCatalog.json. The Integration Readiness tab displays its current verification state. Google DNS MX/SPF/DMARC was exercised through the current browser flow. Remaining source references await adapter review and live result validation.
+The historical host inventory is apps/web/src/config/integrationCatalog.json. The current API inventory is apps/web/src/config/providerCatalog.json. Google DNS MX/SPF/DMARC was exercised through the current browser flow. Remaining source references await adapter review and live result validation.
 
 ## Verification criteria
 

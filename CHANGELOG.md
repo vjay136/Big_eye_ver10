@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 · Release 2 · 2026-11-18
+
+- Verified CLI access to the owning Supabase project and inspected live backend metadata.
+- Updated Integration Readiness to use the live 83-entry API registry.
+- Added an explicit backend configuration check using the deployed provider catalog.
+- Configured the local public Supabase client and recorded outstanding provider verification.
+
 ## 1.0.0 · Release 1 · 2026-11-17
 
 Preview foundation imported from the explicitly labelled working project.
