@@ -7,7 +7,7 @@ subprocess.run(['node','scripts/build-extension.mjs'],cwd=root,check=True)
 with zipfile.ZipFile(out/f"big-eye-extension-{meta['version']}.zip",'w',zipfile.ZIP_DEFLATED) as z:
  for p in sorted((out/'extension').rglob('*')):
   if p.is_file(): z.write(p,p.relative_to(out/'extension'))
-files=subprocess.check_output(['git','ls-files','-z'],cwd=root).decode().split('\0')
+files=subprocess.check_output(['git','-c',f'safe.directory={root.as_posix()}','ls-files','-z'],cwd=root).decode().split('\0')
 if not any(files): raise RuntimeError('Stage or commit the source files before packaging.')
 with zipfile.ZipFile(out/f"big-eye-source-{meta['version']}.zip",'w',zipfile.ZIP_DEFLATED) as z:
  for name in files:

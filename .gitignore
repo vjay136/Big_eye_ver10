@@ -1,7 +1,7 @@
-.build/
+/.build/
 node_modules/
 dist/
-releases/
+/releases/
 .env
 .env.*
 !.env.example
@@ -9,5 +9,8 @@ releases/
 *.log
 .vercel/
 __pycache__/
-sources/
+/sources/
 Big_eye_ver1.all_data.txt
+
+supabase/.temp/
+supabase/.branches/
