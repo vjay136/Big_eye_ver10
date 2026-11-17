@@ -1,0 +1,1 @@
+{"name":"big-eye","private":true,"version":"1.0.0","packageManager":"pnpm@10.28.2","scripts":{"dev":"pnpm --dir apps/web dev","build":"pnpm --dir apps/web build","test":"node --test tests/*.test.mjs","extension:build":"node scripts/build-extension.mjs","release:package":"python scripts/package-release.py"}}

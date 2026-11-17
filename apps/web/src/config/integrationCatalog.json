@@ -1,0 +1,1170 @@
+{
+  "sourceBranch": "Big_Eye_Final_project/ver4/big_eye_static",
+  "sourceClaim": "82+ security APIs",
+  "sourceHandlerCount": 56,
+  "outboundHostReferenceCount": 78,
+  "sourceCredentialNames": [
+    "ABUSEIPDB_API_KEY",
+    "APIVOID_API_KEY",
+    "API_NINJAS_KEY",
+    "BLACKLIST_MASTER_API_KEY",
+    "CHECKPHISH_API_KEY",
+    "CROWD_SEC_API_KEY",
+    "DMARCLY_API_KEY",
+    "EASYDMCARC_API_KEY",
+    "EMAILREP_API_KEY",
+    "GOOGLE_SAFE_BROWSING_API_KEY",
+    "HETRIXTOOLS_API_KEY",
+    "HIBP_API_KEY",
+    "IBM_XFORCE_API_KEY",
+    "IPQUALITYSCORE_API_KEY",
+    "IPTRACKERONLINE_API_KEY",
+    "MAILBOXLAYER_API_KEY",
+    "MXTOOLBOX_API_KEY",
+    "OTX_API_KEY",
+    "PHISHING_INITIATIVE_API_KEY",
+    "PHISHTANK_API_KEY",
+    "RBLTRACKER_API_KEY",
+    "RESEND_API_KEY",
+    "SECURITYTRAILS_API_KEY",
+    "SHADOWSERVER_API_KEY",
+    "SHODAN_API_KEY",
+    "TRUSTIFI_API_KEY",
+    "URLSCAN_API_KEY",
+    "VERIFALIA_PASSWORD",
+    "VERIFALIA_USERNAME",
+    "VERIFY_EMAIL_API_KEY",
+    "VIRUSTOTAL_API_KEY",
+    "WHOISXML_API_KEY"
+  ],
+  "limitations": "Host references include API candidates, public feeds, website links and example targets. Entries require individual documentation and request validation.",
+  "entries": [
+    {
+      "host": "http://api.ip-trackeronline.com",
+      "sourceModules": [
+        "email-header-analyzer"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "EMAILREP_API_KEY",
+        "IPTRACKERONLINE_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "TRUSTIFI_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "http://api.ipvoid.com",
+      "sourceModules": [
+        "email-header-analyzer"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "EMAILREP_API_KEY",
+        "IPTRACKERONLINE_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "TRUSTIFI_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "http://apilayer.net",
+      "sourceModules": [
+        "email-validation"
+      ],
+      "secretReferencesInModules": [
+        "EMAILREP_API_KEY",
+        "MAILBOXLAYER_API_KEY",
+        "VERIFALIA_PASSWORD",
+        "VERIFALIA_USERNAME",
+        "VERIFY_EMAIL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "http://ip-api.com",
+      "sourceModules": [
+        "breach-monitor",
+        "check-api-status",
+        "check-ip-reputation-v3",
+        "email-header-analyzer",
+        "enhanced-ip-analysis",
+        "enhanced-ip-reputation"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "EMAILREP_API_KEY",
+        "IPQUALITYSCORE_API_KEY",
+        "IPTRACKERONLINE_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "TRUSTIFI_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "http://rules.emergingthreats.net",
+      "sourceModules": [
+        "threat-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "BLACKLIST_MASTER_API_KEY",
+        "CROWD_SEC_API_KEY",
+        "HETRIXTOOLS_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "OTX_API_KEY",
+        "RBLTRACKER_API_KEY",
+        "SHADOWSERVER_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "http://test-phishing-site.com",
+      "sourceModules": [
+        "url-domain-reputation"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.abuseipdb.com",
+      "sourceModules": [
+        "breach-monitor",
+        "email-header-analyzer",
+        "enhanced-ip-reputation",
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "EMAILREP_API_KEY",
+        "HIBP_API_KEY",
+        "IPQUALITYSCORE_API_KEY",
+        "IPTRACKERONLINE_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "TRUSTIFI_API_KEY",
+        "VIRUSTOTAL_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.api-ninjas.com",
+      "sourceModules": [
+        "dns-auth-records"
+      ],
+      "secretReferencesInModules": [
+        "API_NINJAS_KEY",
+        "DMARCLY_API_KEY",
+        "EASYDMCARC_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.blacklistmaster.com",
+      "sourceModules": [
+        "threat-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "BLACKLIST_MASTER_API_KEY",
+        "CROWD_SEC_API_KEY",
+        "HETRIXTOOLS_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "OTX_API_KEY",
+        "RBLTRACKER_API_KEY",
+        "SHADOWSERVER_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.checkphish.ai",
+      "sourceModules": [
+        "phishing-detection"
+      ],
+      "secretReferencesInModules": [
+        "CHECKPHISH_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "PHISHING_INITIATIVE_API_KEY",
+        "PHISHTANK_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.dmarcanalyzer.com",
+      "sourceModules": [
+        "dns-auth-records"
+      ],
+      "secretReferencesInModules": [
+        "API_NINJAS_KEY",
+        "DMARCLY_API_KEY",
+        "EASYDMCARC_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.easydmarc.com",
+      "sourceModules": [
+        "dns-auth-records"
+      ],
+      "secretReferencesInModules": [
+        "API_NINJAS_KEY",
+        "DMARCLY_API_KEY",
+        "EASYDMCARC_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.hackertarget.com",
+      "sourceModules": [
+        "check-api-status",
+        "dns-auth-records"
+      ],
+      "secretReferencesInModules": [
+        "API_NINJAS_KEY",
+        "DMARCLY_API_KEY",
+        "EASYDMCARC_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.hetrixtools.com",
+      "sourceModules": [
+        "threat-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "BLACKLIST_MASTER_API_KEY",
+        "CROWD_SEC_API_KEY",
+        "HETRIXTOOLS_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "OTX_API_KEY",
+        "RBLTRACKER_API_KEY",
+        "SHADOWSERVER_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.ip2whois.com",
+      "sourceModules": [
+        "whois-intelligence"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.mxtoolbox.com",
+      "sourceModules": [
+        "email-header-analyzer",
+        "threat-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "BLACKLIST_MASTER_API_KEY",
+        "CROWD_SEC_API_KEY",
+        "EMAILREP_API_KEY",
+        "HETRIXTOOLS_API_KEY",
+        "IPTRACKERONLINE_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "OTX_API_KEY",
+        "RBLTRACKER_API_KEY",
+        "SHADOWSERVER_API_KEY",
+        "TRUSTIFI_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.osv.dev",
+      "sourceModules": [
+        "vulnerability-scanner"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.pwnedpasswords.com",
+      "sourceModules": [
+        "password-breach-monitor"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.rbltracker.com",
+      "sourceModules": [
+        "threat-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "BLACKLIST_MASTER_API_KEY",
+        "CROWD_SEC_API_KEY",
+        "HETRIXTOOLS_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "OTX_API_KEY",
+        "RBLTRACKER_API_KEY",
+        "SHADOWSERVER_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.resend.com",
+      "sourceModules": [
+        "send-security-alert"
+      ],
+      "secretReferencesInModules": [
+        "RESEND_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.securitytrails.com",
+      "sourceModules": [
+        "breach-monitor",
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.shodan.io",
+      "sourceModules": [
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.ssl-checker.io",
+      "sourceModules": [
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.ssllabs.com",
+      "sourceModules": [
+        "check-link-reputation"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.trustifi.com",
+      "sourceModules": [
+        "email-header-analyzer"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "EMAILREP_API_KEY",
+        "IPTRACKERONLINE_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "TRUSTIFI_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.verifalia.com",
+      "sourceModules": [
+        "email-validation"
+      ],
+      "secretReferencesInModules": [
+        "EMAILREP_API_KEY",
+        "MAILBOXLAYER_API_KEY",
+        "VERIFALIA_PASSWORD",
+        "VERIFALIA_USERNAME",
+        "VERIFY_EMAIL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.who-dat.info",
+      "sourceModules": [
+        "email-validation"
+      ],
+      "secretReferencesInModules": [
+        "EMAILREP_API_KEY",
+        "MAILBOXLAYER_API_KEY",
+        "VERIFALIA_PASSWORD",
+        "VERIFALIA_USERNAME",
+        "VERIFY_EMAIL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://api.xforce.ibmcloud.com",
+      "sourceModules": [
+        "url-domain-reputation",
+        "url-domain-reputation-simple"
+      ],
+      "secretReferencesInModules": [
+        "APIVOID_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "IBM_XFORCE_API_KEY",
+        "PHISHTANK_API_KEY",
+        "URLSCAN_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://apps.emaillistvalidation.com",
+      "sourceModules": [
+        "email-validation"
+      ],
+      "secretReferencesInModules": [
+        "EMAILREP_API_KEY",
+        "MAILBOXLAYER_API_KEY",
+        "VERIFALIA_PASSWORD",
+        "VERIFALIA_USERNAME",
+        "VERIFY_EMAIL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://checkurl.phishtank.com",
+      "sourceModules": [
+        "check-api-status",
+        "phishing-detection",
+        "url-domain-reputation",
+        "url-domain-reputation-simple"
+      ],
+      "secretReferencesInModules": [
+        "APIVOID_API_KEY",
+        "CHECKPHISH_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "IBM_XFORCE_API_KEY",
+        "PHISHING_INITIATIVE_API_KEY",
+        "PHISHTANK_API_KEY",
+        "URLSCAN_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://cloudflare-dns.com",
+      "sourceModules": [
+        "check-domain",
+        "check-email-legitimacy",
+        "check-ip-reputation",
+        "scan-blacklist",
+        "url-domain-reputation",
+        "url-domain-reputation-simple",
+        "whois-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "APIVOID_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "IBM_XFORCE_API_KEY",
+        "PHISHTANK_API_KEY",
+        "URLSCAN_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://crt.sh",
+      "sourceModules": [
+        "breach-monitor",
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://cti-api.crowdsec.net",
+      "sourceModules": [
+        "threat-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "BLACKLIST_MASTER_API_KEY",
+        "CROWD_SEC_API_KEY",
+        "HETRIXTOOLS_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "OTX_API_KEY",
+        "RBLTRACKER_API_KEY",
+        "SHADOWSERVER_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://dev.to",
+      "sourceModules": [
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://disposable.debounce.io",
+      "sourceModules": [
+        "check-email-legitimacy",
+        "detect-temp-email"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://dns.google",
+      "sourceModules": [
+        "breach-monitor",
+        "check-api-status",
+        "command-interface",
+        "enhanced-ip-reputation",
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "IPQUALITYSCORE_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "VERIFIED",
+      "scope": "Current Email Intelligence browser flow for MX, SPF and DMARC. Other uses require verification."
+    },
+    {
+      "host": "https://emailrep.io",
+      "sourceModules": [
+        "email-header-analyzer",
+        "email-validation"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "EMAILREP_API_KEY",
+        "IPTRACKERONLINE_API_KEY",
+        "MAILBOXLAYER_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "TRUSTIFI_API_KEY",
+        "VERIFALIA_PASSWORD",
+        "VERIFALIA_USERNAME",
+        "VERIFY_EMAIL_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://endpoint.apivoid.com",
+      "sourceModules": [
+        "url-domain-reputation",
+        "url-domain-reputation-simple"
+      ],
+      "secretReferencesInModules": [
+        "APIVOID_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "IBM_XFORCE_API_KEY",
+        "PHISHTANK_API_KEY",
+        "URLSCAN_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://exploit-db.com",
+      "sourceModules": [
+        "exploit-database"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://freeipapi.com",
+      "sourceModules": [
+        "check-ip-reputation-v3"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://github.com",
+      "sourceModules": [
+        "osint-reconnaissance",
+        "url-domain-reputation"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://haveibeenpwned.com",
+      "sourceModules": [
+        "osint-reconnaissance",
+        "password-breach-monitor"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://hosts-file.net",
+      "sourceModules": [
+        "threat-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "BLACKLIST_MASTER_API_KEY",
+        "CROWD_SEC_API_KEY",
+        "HETRIXTOOLS_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "OTX_API_KEY",
+        "RBLTRACKER_API_KEY",
+        "SHADOWSERVER_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://instagram.com",
+      "sourceModules": [
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://ipapi.co",
+      "sourceModules": [
+        "check-ip-reputation-v3",
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://ipqualityscore.com",
+      "sourceModules": [
+        "check-api-status",
+        "enhanced-ip-reputation"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "IPQUALITYSCORE_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://ipwhois.app",
+      "sourceModules": [
+        "check-ip-reputation",
+        "url-domain-reputation",
+        "url-domain-reputation-simple"
+      ],
+      "secretReferencesInModules": [
+        "APIVOID_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "IBM_XFORCE_API_KEY",
+        "PHISHTANK_API_KEY",
+        "URLSCAN_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://linkedin.com",
+      "sourceModules": [
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://lists.blocklist.de",
+      "sourceModules": [
+        "threat-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "BLACKLIST_MASTER_API_KEY",
+        "CROWD_SEC_API_KEY",
+        "HETRIXTOOLS_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "OTX_API_KEY",
+        "RBLTRACKER_API_KEY",
+        "SHADOWSERVER_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://malicious-site.com",
+      "sourceModules": [
+        "api-security-scanner"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://malshare.com",
+      "sourceModules": [
+        "malware-repository"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://mb-api.abuse.ch",
+      "sourceModules": [
+        "malware-repository"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://medium.com",
+      "sourceModules": [
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://news.ycombinator.com",
+      "sourceModules": [
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://open.kickbox.com",
+      "sourceModules": [
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://openphish.com",
+      "sourceModules": [
+        "check-api-status",
+        "phishing-detection"
+      ],
+      "secretReferencesInModules": [
+        "CHECKPHISH_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "PHISHING_INITIATIVE_API_KEY",
+        "PHISHTANK_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://ossindex.sonatype.org",
+      "sourceModules": [
+        "vulnerability-scanner"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://otx.alienvault.com",
+      "sourceModules": [
+        "threat-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "BLACKLIST_MASTER_API_KEY",
+        "CROWD_SEC_API_KEY",
+        "HETRIXTOOLS_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "OTX_API_KEY",
+        "RBLTRACKER_API_KEY",
+        "SHADOWSERVER_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://pda.shodan.io",
+      "sourceModules": [
+        "threat-intelligence"
+      ],
+      "secretReferencesInModules": [
+        "BLACKLIST_MASTER_API_KEY",
+        "CROWD_SEC_API_KEY",
+        "HETRIXTOOLS_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "OTX_API_KEY",
+        "RBLTRACKER_API_KEY",
+        "SHADOWSERVER_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://phishing-initiative.fr",
+      "sourceModules": [
+        "phishing-detection"
+      ],
+      "secretReferencesInModules": [
+        "CHECKPHISH_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "PHISHING_INITIATIVE_API_KEY",
+        "PHISHTANK_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://rdap.net",
+      "sourceModules": [
+        "get-domain-age"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://rdap.org",
+      "sourceModules": [
+        "check-link-reputation",
+        "get-domain-age"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://reddit.com",
+      "sourceModules": [
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://safebrowsing.googleapis.com",
+      "sourceModules": [
+        "phishing-detection",
+        "url-domain-reputation",
+        "url-domain-reputation-simple"
+      ],
+      "secretReferencesInModules": [
+        "APIVOID_API_KEY",
+        "CHECKPHISH_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "IBM_XFORCE_API_KEY",
+        "PHISHING_INITIATIVE_API_KEY",
+        "PHISHTANK_API_KEY",
+        "URLSCAN_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://securitytrails.com",
+      "sourceModules": [
+        "url-domain-reputation"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://services.nvd.nist.gov",
+      "sourceModules": [
+        "vulnerability-scanner"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://ssl-checker.io",
+      "sourceModules": [
+        "ssl-certificate-analyzer",
+        "whois-intelligence"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://twitter.com",
+      "sourceModules": [
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://urlscan.io",
+      "sourceModules": [
+        "osint-reconnaissance",
+        "url-domain-reputation",
+        "url-domain-reputation-simple"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "APIVOID_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "HIBP_API_KEY",
+        "IBM_XFORCE_API_KEY",
+        "PHISHTANK_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "URLSCAN_API_KEY",
+        "VIRUSTOTAL_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://verifymail.io",
+      "sourceModules": [
+        "check-email-legitimacy"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://whois.arin.net",
+      "sourceModules": [
+        "command-interface"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://whoisjson.com",
+      "sourceModules": [
+        "check-domain",
+        "url-domain-reputation",
+        "url-domain-reputation-simple"
+      ],
+      "secretReferencesInModules": [
+        "APIVOID_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "IBM_XFORCE_API_KEY",
+        "PHISHTANK_API_KEY",
+        "URLSCAN_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://www.cloudflare.com",
+      "sourceModules": [
+        "check-api-status"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://www.example.com",
+      "sourceModules": [
+        "url-domain-reputation"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://www.google.com",
+      "sourceModules": [
+        "check-api-status",
+        "url-domain-reputation"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://www.ipqualityscore.com",
+      "sourceModules": [
+        "scan-blacklist"
+      ],
+      "secretReferencesInModules": [],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://www.virustotal.com",
+      "sourceModules": [
+        "email-header-analyzer",
+        "url-domain-reputation",
+        "url-domain-reputation-simple"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "APIVOID_API_KEY",
+        "EMAILREP_API_KEY",
+        "GOOGLE_SAFE_BROWSING_API_KEY",
+        "IBM_XFORCE_API_KEY",
+        "IPTRACKERONLINE_API_KEY",
+        "MXTOOLBOX_API_KEY",
+        "PHISHTANK_API_KEY",
+        "TRUSTIFI_API_KEY",
+        "URLSCAN_API_KEY",
+        "VIRUSTOTAL_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    },
+    {
+      "host": "https://www.whoisxmlapi.com",
+      "sourceModules": [
+        "breach-monitor",
+        "osint-reconnaissance"
+      ],
+      "secretReferencesInModules": [
+        "ABUSEIPDB_API_KEY",
+        "HIBP_API_KEY",
+        "SECURITYTRAILS_API_KEY",
+        "SHODAN_API_KEY",
+        "WHOISXML_API_KEY"
+      ],
+      "verification": "PENDING",
+      "scope": ""
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+.build/
+node_modules/
+dist/
+releases/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+*.log
+.vercel/
+__pycache__/
+sources/
+Big_eye_ver1.all_data.txt

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Big Eye</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header><h1>Big Eye</h1><span id="version"></span></header>
+<p>Paste a message or URL for local phishing signal checks.</p>
+<form id="analysis">
+<label for="message">Message or email headers</label>
+<textarea id="message" rows="6" maxlength="1048576"></textarea>
+<label for="url">URL</label><input id="url" maxlength="8192" placeholder="https://example.com">
+<button>Analyze</button>
+</form>
+<section id="result" aria-live="polite"></section>
+<p class="muted">The score reflects heuristic signals. Check attachments with a trusted malware scanner.</p>
+<details><summary>Connect web app</summary>
+<form id="settings"><label for="webapp">Your deployed HTTPS web app URL</label><input id="webapp" type="url" required><button>Save</button></form>
+<p id="saved" role="status"></p></details>
+<a id="open" hidden target="_blank" rel="noopener noreferrer">Open Big Eye web app</a>
+<script type="module" src="popup.js"></script>
+</body></html>
