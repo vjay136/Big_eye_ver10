@@ -9,22 +9,30 @@ type ProviderReadiness = {
   wired: boolean;
 };
 
+const categories = [...new Set(catalog.entries.map(entry => entry.category))].sort();
+
 export default function IntegrationReadiness() {
   const [query, setQuery] = useState('');
+  const [category, setCategory] = useState('');
   const [providers, setProviders] = useState<ProviderReadiness[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [loaded, setLoaded] = useState(false);
   const entries = catalog.entries.filter(entry =>
-    [entry.name, entry.provider, entry.category, entry.id].join(' ').toLowerCase().includes(query.toLowerCase()),
+    (!category || entry.category === category) && [entry.name, entry.provider, entry.category, entry.id].join(' ').toLowerCase().includes(query.toLowerCase()),
   );
 
   async function loadReadiness() {
     setBusy(true);
     setError('');
+    setLoaded(false);
     try {
       const response = await supabase.functions.invoke('get-provider-catalog', { body: {} });
       const list: unknown = response.data?.data?.providers;
+      if (response.error?.context?.status === 404) {
+        setError('The provider catalog function is not installed on this Supabase project.');
+        return;
+      }
       if (response.error || !Array.isArray(list) || !list.every(item =>
         item && typeof item.id === 'string' && typeof item.configured === 'boolean' && typeof item.wired === 'boolean',
       )) throw new Error('Invalid catalog response.');
@@ -60,14 +68,23 @@ export default function IntegrationReadiness() {
     <label className="block">Filter API, provider or category
       <input value={query} onChange={event => setQuery(event.target.value)} className="block w-full rounded border p-3 bg-bg-near-black" />
     </label>
+    <label className="block">Use case
+      <select value={category} onChange={event => setCategory(event.target.value)} className="block w-full rounded border border-border-subtle bg-bg-near-black p-2">
+        <option value="">All categories</option>
+        {categories.map(name => <option key={name}>{name}</option>)}
+      </select>
+    </label>
     <p role="status">{entries.length} registered APIs shown</p>
+    {!entries.length && <p>Try a different search or category.</p>}
     <div className="space-y-3">{entries.map(entry => <article key={entry.id} className="rounded border border-border-subtle p-4 space-y-2">
       <h3 className="font-semibold">{entry.name}</h3>
       <p className="text-sm text-text-secondary">{entry.provider} · {entry.category}</p>
-      <p>Live result verification pending</p>
+      <p>{entry.id === 'CPE-CP-001'
+        ? <a className="text-accent-primary underline" href="#product-lookup">Open the keyless NIST lookup</a>
+        : 'Provider result verification pending'}</p>
       <dl className="text-sm">
         <dt>Authentication</dt><dd className="mb-2">{entry.authentication || 'Needs review'}</dd>
-        <dt>Catalog reference</dt><dd>{entry.id}</dd>
+        <dt>Registry ID</dt><dd>{entry.id}</dd>
       </dl>
       {/^https:\/\//i.test(entry.docs_url || '') && <a className="text-accent-primary underline" href={entry.docs_url} target="_blank" rel="noopener noreferrer">Provider documentation</a>}
     </article>)}</div>

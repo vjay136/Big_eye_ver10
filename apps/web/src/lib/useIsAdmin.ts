@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from './supabase';
 import { useAuth } from './auth';
 
-export function useIsAdmin() {
+export function useIsAdmin(enabled: boolean) {
   const { user } = useAuth();
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ export function useIsAdmin() {
     setIsAdmin(false);
     setLoading(true);
     async function checkAdmin() {
-      if (!user) {
+      if (!enabled || !user) {
         setIsAdmin(false);
         setLoading(false);
         return;
@@ -37,7 +37,7 @@ export function useIsAdmin() {
 
     checkAdmin();
     return () => { cancelled = true; };
-  }, [user]);
+  }, [enabled, user]);
 
   return { isAdmin, loading };
 }

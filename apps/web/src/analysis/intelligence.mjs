@@ -24,22 +24,40 @@ export function emailProfile(value) {
   };
 }
 
-export async function domainDns(domain, request = fetch) {
+const resolvers = {
+  google: { name: 'Google Public DNS', url: 'https://dns.google/resolve' },
+  cloudflare: { name: 'Cloudflare 1.1.1.1', url: 'https://cloudflare-dns.com/dns-query' },
+};
+
+export async function domainDns(domain, request = fetch, { resolver = 'google', selector = '' } = {}) {
+  const upstream = resolvers[resolver];
+  if (!Object.hasOwn(resolvers, resolver)) throw new Error('Choose a supported DNS resolver.');
+  if (selector && !/^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/i.test(selector)) {
+    throw new Error('Enter a valid single-label DKIM selector.');
+  }
+
   if (typeof domain !== 'string' || !domainPattern.test(domain)) throw new Error('Enter a public DNS domain.');
   const definitions = [
     { kind: 'MX', name: domain, type: 15, prefix: '' },
     { kind: 'SPF', name: domain, type: 16, prefix: 'v=spf1' },
     { kind: 'DMARC', name: '_dmarc.' + domain, type: 16, prefix: 'v=DMARC1' },
   ];
+  if (selector) {
+    const name = selector.toLowerCase() + '._domainkey.' + domain;
+    if (name.length > 253) throw new Error('The combined selector and domain are too long.');
+    definitions.push({ kind: 'DKIM', name, type: 16, prefix: '' });
+  }
   return Promise.all(definitions.map(async (definition) => {
     const evidence = {
       kind: definition.kind,
-      source: 'Google Public DNS',
+      source: upstream.name,
       collectedAt: new Date().toISOString(),
     };
     try {
-      const query = new URLSearchParams({ name: definition.name, type: String(definition.type), edns_client_subnet: '0.0.0.0/0' });
-      const response = await request('https://dns.google/resolve?' + query, {
+      const query = new URLSearchParams({ name: definition.name, type: String(definition.type) });
+      if (resolver === 'google') query.set('edns_client_subnet', '0.0.0.0/0');
+      const response = await request(upstream.url + '?' + query, {
+        headers: { Accept: 'application/dns-json' },
         signal: AbortSignal.timeout(8000), redirect: 'error',
       });
       if (!response.ok) throw new Error('Resolver unavailable.');

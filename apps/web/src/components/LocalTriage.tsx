@@ -1,23 +1,24 @@
 import { useState } from 'react';
 import { analyze, attachmentSignals } from '../analysis/triage.mjs';
 
-export default function LocalTriage() {
+type Mode = 'message' | 'headers' | 'url' | 'attachment';
+const titles = { message: 'Message triage', headers: 'Message headers', url: 'URL inspection', attachment: 'Attachment fingerprint' };
+
+export default function LocalTriage({ mode }: { mode: Mode }) {
   const [message, setMessage] = useState('');
   const [url, setUrl] = useState('');
   const [error, setError] = useState('');
   const [result, setResult] = useState<ReturnType<typeof analyze>>();
   const [file, setFile] = useState<{ name: string; hash: string }>();
-  const [tab, setTab] = useState<'message' | 'attachment'>('message');
   const [hashing, setHashing] = useState(false);
 
   return <section className="space-y-5">
-    <h2 className="text-2xl font-semibold">Local phishing triage</h2>
-    <p className="text-text-secondary">Checks run in this browser. The score reflects heuristic signals. Use a trusted scanner for a malware verdict.</p>
-    <nav className="flex flex-wrap gap-3" aria-label="Triage tools">
-      <button type="button" aria-pressed={tab === 'message'} onClick={() => { setError(''); setTab('message'); }} className="rounded border px-3 py-2">Message and URL</button>
-      <button type="button" aria-pressed={tab === 'attachment'} onClick={() => { setError(''); setTab('attachment'); }} className="rounded border px-3 py-2">Attachment</button>
-    </nav>
-    {tab === 'message' ? <form className="space-y-3" onSubmit={(event) => {
+    <h2 className="text-2xl font-semibold">{titles[mode]}</h2>
+    <p className="text-text-secondary">{mode === 'attachment'
+      ? 'Calculate a SHA-256 fingerprint and check the filename. The file stays on this device.'
+      : mode === 'url' ? 'Inspect the URL text without visiting the site.'
+      : 'Check local signals in the text you provide. Submitted text stays in this browser.'}</p>
+    {mode !== 'attachment' ? <form className="space-y-3" onSubmit={(event) => {
       event.preventDefault();
       setError('');
       setResult(undefined);
@@ -27,7 +28,7 @@ export default function LocalTriage() {
         setError(failure instanceof Error ? failure.message : 'Analysis failed.');
       }
     }}>
-      <label className="block">Import .eml or plain-text message up to 1 MiB
+      {mode === 'message' && <label className="block">Import .eml or plain-text message up to 1 MiB
         <input type="file" accept=".eml,.txt" className="block" onChange={async event => {
           const input = event.currentTarget;
           const uploaded = input.files?.[0];
@@ -45,13 +46,13 @@ export default function LocalTriage() {
             setError('Could not read the message file.');
           }
         }} />
-      </label>
-      <label className="block">Email headers or plain-text message
+      </label>}
+      {mode !== 'url' && <label className="block">{mode === 'headers' ? 'Raw email headers' : 'Email headers or plain-text message'}
         <textarea value={message} maxLength={1024 * 1024} onChange={(event) => { setMessage(event.target.value); setResult(undefined); }} rows={8} className="block w-full rounded border p-3 bg-bg-near-black" />
-      </label>
-      <label className="block">URL
+      </label>}
+      {mode === 'url' && <label className="block">URL
         <input value={url} maxLength={8192} onChange={(event) => { setUrl(event.target.value); setResult(undefined); }} className="block w-full rounded border p-3 bg-bg-near-black" />
-      </label>
+      </label>}
       <button disabled={!message.trim() && !url.trim()} className="rounded bg-accent-primary px-4 py-2 text-white disabled:opacity-50">Analyze</button>
     </form> : <div className="space-y-3">
       <label className="block">Attachment up to 25 MiB
@@ -86,7 +87,7 @@ export default function LocalTriage() {
       </div>}
     </div>}
     {error && <p role="alert">{error}</p>}
-    {tab === 'message' && result && <div role="status" className="space-y-2">
+    {mode !== 'attachment' && result && <div role="status" className="space-y-2">
       <button className="rounded border px-3 py-2" onClick={() => {
         const report = { schemaVersion: 1, collectedAt: new Date().toISOString(), method: 'local-heuristics', ...result };
         const downloadUrl = URL.createObjectURL(new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' }));

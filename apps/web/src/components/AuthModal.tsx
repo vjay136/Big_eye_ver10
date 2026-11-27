@@ -24,12 +24,13 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
       } else {
         // Calculate password strength
         const strength = calculatePasswordStrength(password);
-        if (strength < 2) {
+        if (password.length < 8 || strength < 2) {
           throw new Error('Password is too weak. Please use at least 8 characters with letters and numbers.');
         }
 
-        await signUpWithEmail(email, password);
-        setSuccess('Verification email sent! Please check your inbox and confirm your email address.');
+        const signedIn = await signUpWithEmail(email, password);
+        if (signedIn) onClose();
+        else setSuccess('Check your inbox for a confirmation link if this address can register.');
       }
     } catch (err: any) {
       setError(err.message || 'Authentication failed');
@@ -57,13 +58,13 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
+    <div role="dialog" aria-modal="true" aria-labelledby="auth-dialog-title" className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
       <div className="bg-bg-dark-surface rounded-lg shadow-modal max-w-md w-full p-8 border border-border-subtle">
-        <h2 className="text-2xl font-bold mb-2 text-text-primary">
+        <h2 id="auth-dialog-title" className="text-2xl font-bold mb-2 text-text-primary">
           {mode === 'signin' ? 'Sign In to Big Eye' : 'Create Your Account'}
         </h2>
         <p className="text-text-secondary mb-6">
-          Please sign in to continue using our advanced email analysis platform
+          Sign in with your Big Eye account.
         </p>
 
         {error && (
@@ -81,6 +82,7 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
         )}
 
         <div className="space-y-4">
+          {import.meta.env.VITE_ENABLE_GOOGLE_AUTH === 'true' && <>
           {/* Google Sign In */}
           <button
             onClick={handleGoogleSignIn}
@@ -105,15 +107,18 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
             </div>
           </div>
 
+          </>}
           {/* Email/Password Form */}
           <form onSubmit={handleEmailAuth} className="space-y-4">
             <div>
-              <label className="block text-sm font-semibold text-text-primary mb-2">
+              <label htmlFor="login-email" className="block text-sm font-semibold text-text-primary mb-2">
                 Email Address
               </label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-tertiary" />
                 <input
+                  id="login-email"
+                  autoComplete="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -125,12 +130,14 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-text-primary mb-2">
+              <label htmlFor="login-password" className="block text-sm font-semibold text-text-primary mb-2">
                 Password
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-tertiary" />
                 <input
+                  id="login-password"
+                  autoComplete={mode === 'signup' ? 'new-password' : 'current-password'}
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

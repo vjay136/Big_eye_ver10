@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.2 · Release 3 · 2026-11-27
+
+- Grouped tools into Email, Domains & IP, Links, Attachments, Inventory and Setup.
+- Added separate browser-only workflows for message headers, URLs and attachment fingerprints.
+- Added keyless mail DNS with Google and Cloudflare and an optional DKIM selector.
+- Added NIST CPE product lookup through a dedicated server route.
+- Switched the public client to the new Supabase project and clarified missing deployment state.
+- Added use-case filters to the 83-entry provider catalog.
+
 ## 1.0.1 · Release 2 · 2026-11-18
 
 - Verified CLI access to the owning Supabase project and inspected live backend metadata.

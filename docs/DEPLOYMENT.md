@@ -23,7 +23,7 @@ For future changes, create a feature branch, run tests and builds, open a pull r
 11. Set the deployed origin in Supabase Auth Site URL and redirect allowlist. Configure Google OAuth if you want Google sign-in.
 12. Test sign-up, confirmation, sign-in, each backend tool, persisted scans and sign-out.
 
-The checked-in apps/web/vercel.json configures the Vite output and SPA fallback.
+The checked-in apps/web/vercel.json configures the Vite output. Navigation uses URL fragments. The software identifier lookup is served by the Vercel API route, so use Vercel Dev or the hosted app to exercise that integration.
 
 The Vercel CLI is authorized for silent-soldier-vjay. Project big-eye is linked to apps/web and deployed at https://big-eye-silk.vercel.app. The connector belongs to a different account, so project operations use the CLI. See deployment-status.json for the verified deployment.
 
@@ -31,7 +31,7 @@ Vercel creates deployments from connected Git repositories and supports project 
 
 ## Restore Supabase
 
-The supplied project reference is nlqqbxnifyyvibxboufb. CLI access through its owning account was established on 18 November 2026. The deployed public client is configured and the hosted backend readiness request passes.
+The current project is nprksyjxuzxwzgmpdifa. Its public Auth settings and JWKS endpoints respond. The current CLI account cannot manage the project. Use the project owner account or grant it appropriate management access before deploying functions or changing Auth settings.
 
 1. Make the intended project accessible through your Supabase connection.
 2. Compare live schema and migration history against supabase/tables and supabase/migrations.
@@ -41,6 +41,7 @@ The supplied project reference is nlqqbxnifyyvibxboufb. CLI access through its o
 6. Verify each function with an authenticated test user, invalid input, provider timeout and a second user attempting unauthorized access.
 7. Inspect scan and usage records to confirm frontend/backend synchronization.
 8. Record provider availability and quota information before enabling a feature for customers.
+9. Set VITE_REVIEWED_FUNCTIONS to the comma-separated names of the reviewed and deployed functions behind the legacy tools you intend to expose. Set VITE_ENABLE_GOOGLE_AUTH=true only after configuring Google in Supabase. Both settings require a rebuild.
 
 The local triage module and extension require no Supabase credentials. Optional DNS lookups use the public Google resolver.
 
@@ -52,7 +53,7 @@ Supabase documents server verification of authenticated function requests and ro
 2. Open chrome://extensions in Chrome.
 3. Enable Developer mode.
 4. Choose Load unpacked.
-5. Select releases/1.0.0/extension.
+5. Select releases/1.0.2/extension.
 6. Pin Big Eye and open its popup.
 7. Paste a message or URL and choose Analyze.
 8. Expand Connect web app and save your deployed HTTPS web URL.
@@ -65,7 +66,7 @@ The extension uses Manifest V3. The storage permission saves the web app URL. An
 1. Register a Chrome Web Store developer account and complete its account requirements.
 2. Enable two-step verification on the publishing Google account.
 3. Test the unpacked extension and prepare the ZIP with python scripts/package-release.py.
-4. In the developer dashboard, create a new item and upload releases/1.0.0/big-eye-extension-1.0.0.zip. The manifest is at the ZIP root.
+4. In the developer dashboard, create a new item and upload releases/1.0.2/big-eye-extension-1.0.0.zip. The manifest is at the ZIP root.
 5. Provide the description, category, language, support contact, icons and screenshots requested by the current dashboard.
 6. Publish an accessible privacy-policy URL that describes the deployed release. For this extension, describe local pasted-text processing and storage of the optional web URL. Describe the web application's separate data handling on its own page.
 7. Complete the Privacy practices and permission justifications. Explain that storage retains the user-configured web app URL.

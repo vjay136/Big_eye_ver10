@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Big Eye",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Run local phishing signal checks on pasted messages and URLs.",
   "permissions": [
     "storage"
@@ -18,5 +18,5 @@
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'none'"
   },
-  "version_name": "1.0.1 (release 2)"
+  "version_name": "1.0.2 (release 3)"
 }

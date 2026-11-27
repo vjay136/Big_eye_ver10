@@ -1,5 +1,7 @@
 # API verification status
 
+On 27 November 2026, the hosted app switched to project nprksyjxuzxwzgmpdifa. The 83 entries are a snapshot from the retired project. The NIST CPE lookup is wired and was verified in the browser. The new Supabase project does not have the provider catalog function. See releases/1.0.2.md for the current state.
+
 On 18 November 2026, the owning Supabase account was authorized through the CLI. The live api_registry supplies the full 83-entry checklist. The Integration Readiness tab now uses that registry and can load the deployed 26-adapter configuration response. See CONNECTED_BACKEND_REVIEW.md for verified access and credential availability.
 
 The requested target is every claimed 80+ API. The later source advertises 82+. Its selected final branch has 56 Edge Function handlers and 78 distinct outbound host references. These counts describe different objects and require reconciliation. The host references include social links and example targets.

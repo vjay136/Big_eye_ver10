@@ -18,4 +18,4 @@ export interface DnsEvidence {
   dnssecValidated: boolean;
 }
 export function emailProfile(value: string): EmailProfile;
-export function domainDns(domain: string, request?: typeof fetch): Promise<DnsEvidence[]>;
+export function domainDns(domain: string, request?: typeof fetch, options?: { resolver?: 'google' | 'cloudflare'; selector?: string }): Promise<DnsEvidence[]>;
